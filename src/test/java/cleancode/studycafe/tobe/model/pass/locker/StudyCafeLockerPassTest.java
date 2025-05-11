@@ -45,4 +45,15 @@ class StudyCafeLockerPassTest {
         // then
         assertFalse(result); // false 인지 확인
     }
+
+    @Test
+    @DisplayName("사물함이 없는 경우 false를 반환해야 한다")
+    // 사물함이 없을 경우 false 반환
+    void returnFalseWhenLockerPassIsNull() {
+        // when
+        boolean result = lockerPass.isSamePassType(null);
+
+        // then
+        assertFalse(result); // false 인지 확인
+    }
 }
