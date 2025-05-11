@@ -3,11 +3,12 @@ package cleancode.studycafe.tobe.model.pass;
 import cleancode.studycafe.tobe.model.pass.locker.StudyCafeLockerPass;
 
 public class StudyCafeSeatPass implements StudyCafePass {
+    // 사용자가 좌석을 선택했을 때, 좌석의 타입, 기간, 할인율 등을 확인합니다
 
-    private final StudyCafePassType passType;
-    private final int duration;
-    private final int price;
-    private final double discountRate;
+    private final StudyCafePassType passType; // 좌석 타입 - 시간, 주, 1인 고정
+    private final int duration; // 기간
+    private final int price; // 가격
+    private final double discountRate; // 할인율
 
     private StudyCafeSeatPass(StudyCafePassType passType, int duration, int price, double discountRate) {
         this.passType = passType;

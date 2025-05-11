@@ -6,6 +6,7 @@ import cleancode.studycafe.tobe.model.pass.locker.StudyCafeLockerPass;
 import java.util.Optional;
 
 public class StudyCafePassOrder {
+    // 사용자가 선택한 좌석의 타입, 사물함의 타입, 좌석의 할인 가격, 총 가격을 받습니다.
 
     private final StudyCafeSeatPass seatPass;
     private final StudyCafeLockerPass lockerPass;

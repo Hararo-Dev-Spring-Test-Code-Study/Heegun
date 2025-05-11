@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class StudyCafePassMachine {
+    // 사용자가 스터디카페 좌석을 이용하기 위해 실행하는 코드입니다.
+    // 여기는 직접 코드 확인하시면서 파악하시면 좋을 것 같습니다!
 
     private final StudyCafeIOHandler ioHandler = new StudyCafeIOHandler();
     private final SeatPassProvider seatPassProvider;
