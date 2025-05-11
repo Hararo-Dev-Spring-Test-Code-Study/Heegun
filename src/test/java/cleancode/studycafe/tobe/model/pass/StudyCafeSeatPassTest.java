@@ -50,19 +50,19 @@ class StudyCafeSeatPassTest {
 
         matchedLockerPass = StudyCafeLockerPass.of( // fixedPass 와 동일한 타입, 동일한 기간을 가진 객체
             StudyCafePassType.FIXED, // 동일한 타입
-            30,                      // 동일한 기간
+            30, // 동일한 기간
             20000
         );
 
         mismatchedTypeLockerPass = StudyCafeLockerPass.of( // fixedPass 와 다른 타입, 동일한 기간을 가진 객체
             StudyCafePassType.WEEKLY, // 다른 타입
-            30,                       // 동일한 기간
+            30, // 동일한 기간
             20000
         );
 
         mismatchedDurationLockerPass = StudyCafeLockerPass.of( // fixedPass 와 동일한 타입, 다른 기간을 가진 객체
             StudyCafePassType.FIXED, // 동일한 타입
-            14,                      // 다른 기간
+            14, // 다른 기간
             20000
         );
 
@@ -70,15 +70,15 @@ class StudyCafeSeatPassTest {
         discountedPass = StudyCafeSeatPass.of(
             StudyCafePassType.FIXED,
             30,
-            100000,  // 가격: 10만원
-            0.15     // 할인율: 15%
+            100000, // 가격: 10만원
+            0.15 // 할인율: 15%
         );
 
         noDiscountPass = StudyCafeSeatPass.of(
             StudyCafePassType.FIXED,
             30,
             100000,
-            0.0      // 할인율 없음
+            0.0 // 할인율 없음
         );
 
     }
