@@ -1,5 +1,9 @@
-// StudyCafePassOrder 클래스 getTotalPrice() 메서드 테스트 코드
-// 테스트 목적 : 총 가격 계산 로직 검증
+// StudyCafePassOrder 클래스
+// 1) getTotalPrice() 메서드 테스트 코드
+// 2) getLockerPass() 메서드 테스트 코드
+// 테스트 목적 :
+// 1) 총 가격 계산 로직 검증
+// 2) 좌석 이용권과 사물함 이용권을 포함한 주문 객체가 올바르게 생성되는지 검증
 package cleancode.studycafe.tobe.model.order;
 
 import cleancode.studycafe.tobe.model.pass.StudyCafePassType;
@@ -10,6 +14,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class StudyCafePassOrderTest {
 
@@ -61,5 +66,28 @@ class StudyCafePassOrderTest {
         int expectedTotal = 100000 - expectedDiscount; // 직접 계산
 
         assertEquals(expectedTotal, result); // 직접 계산한 결과와 실제 값과 같은지 확인
+    }
+
+
+    @Test
+    @DisplayName("사물함이 있을 때 Optional에 값이 들어 있어야 한다")
+    // 사물함이 설정된 경우 getLockerPass()가 Optional로 값을 반환하는지 확인
+    void returnLockerPassIfPresent() {
+        // when
+        StudyCafePassOrder order = StudyCafePassOrder.of(seatPassWithDiscount, lockerPass);
+
+        // then
+        assertEquals(lockerPass, order.getLockerPass().orElse(null));
+    }
+
+    @Test
+    @DisplayName("사물함이 없을 때 Optional은 비어 있어야 한다")
+    // 사물함이 없는 경우 getLockerPass()가 Optional.empty()를 반환하는지 확인
+    void returnNullIfNotPresent() {
+        // when
+        StudyCafePassOrder order = StudyCafePassOrder.of(seatPassWithDiscount, null);
+
+        // then
+        assertNull(order.getLockerPass().orElse(null));
     }
 }
